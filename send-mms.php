@@ -13,12 +13,17 @@ $platform = $rcsdk->platform();
 
 $platform->login(getenv('RINGCENTRAL_USERNAME'), getenv('RINGCENTRAL_EXTENSION'), getenv('RINGCENTRAL_PASSWORD'));
 
-$r = $platform->post('/account/~/extension/~/sms', array(
-    'from' => array('phoneNumber' => getenv('RINGCENTRAL_USERNAME')),
-    'to' => array(
-        array('phoneNumber' => getenv('RINGCENTRAL_RECEIVER')),
-    ),
-    'text' => 'Message content',
-));
+$request = $rcsdk->createMultipartBuilder()
+    ->setBody(array(
+        'from' => array('phoneNumber' => getenv('RINGCENTRAL_USERNAME')),
+        'to' => array(
+            array('phoneNumber' => getenv('RINGCENTRAL_RECEIVER')),
+        ),
+        'text' => 'Message content',
+    ))
+    -> add(fopen(__DIR__.'/test.jpg', 'r'))
+    -> request('/account/~/extension/~/sms');
+
+$r = $platform->sendRequest($request);
 
 print_r($r->json()->id);
