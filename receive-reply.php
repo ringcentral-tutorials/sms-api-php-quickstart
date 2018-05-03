@@ -18,8 +18,16 @@ $platform->login(getenv('RINGCENTRAL_USERNAME'), getenv('RINGCENTRAL_EXTENSION')
 
 $subscription = $rcsdk->createSubscription();
 $subscription->addEvents(array('/restapi/v1.0/account/~/extension/~/message-store/instant?type=SMS'));
-$subscription->addListener(Subscription::EVENT_NOTIFICATION, function (NotificationEvent $e) {
-    print_r($e->payload());
+$subscription->addListener(Subscription::EVENT_NOTIFICATION, function (NotificationEvent $e) use ($platform) {
+    $sender = $e->payload()['body']['from']['phoneNumber'];
+    $r = $platform->post('/account/~/extension/~/sms', array(
+        'from' => array('phoneNumber' => getenv('RINGCENTRAL_USERNAME')),
+        'to' => array(
+            array('phoneNumber' => $sender),
+        ),
+        'text' => 'This is an automatic reply',
+    ));
+    print_r('SMS replied: ' . $r->json()->id);
 });
 $subscription->setKeepPolling(true);
 $r = $subscription->register();
