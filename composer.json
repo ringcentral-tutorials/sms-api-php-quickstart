@@ -1,8 +1,8 @@
 {
   "name": "sms-api-php-quickstart",
   "description": "A quickstart tutorial to teach users to use RingCentral SMS API.",
-    "require": {
-        "symfony/dotenv": "^4.0",
-        "ringcentral/ringcentral-php": "^2.1"
-    }
+  "require": {
+    "symfony/dotenv": "^4.0",
+    "ringcentral/ringcentral-php": "^2.1"
+  }
 }

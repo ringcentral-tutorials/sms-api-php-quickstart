@@ -1,0 +1,5 @@
+vendor/
+composer.phar
+.env
+.env.prod
+.env.sandbox
