@@ -1,0 +1,13 @@
+{
+  "name": "sms-api-php-quickstart",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "upgrade": "yarn-upgrade-all",
+    "build": "cd docs && ../node_modules/.bin/saurus author"
+  },
+  "devDependencies": {
+    "viewsaurus-ringcentral": "^0.4.7",
+    "yarn-upgrade-all": "^0.3.0"
+  }
+}
