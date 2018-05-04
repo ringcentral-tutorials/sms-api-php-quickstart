@@ -23,7 +23,7 @@
 
       #### Create file `send-sms.php` for SMS sending
 
-  .step(data-title='Send SMS - 2', data-file='../send-sms.php', data-highlight='2-4')
+  .step(data-title='Send SMS - 2', data-file='../send-sms.php', data-highlight='7-8')
     :markdown
       ## Send SMS - 2
 
@@ -31,7 +31,7 @@
 
       #### Load environment variables from `.env` file
 
-  .step(data-title='Send SMS - 3', data-file='../send-sms.php', data-highlight='6-10')
+  .step(data-title='Send SMS - 3', data-file='../send-sms.php', data-highlight='10-10')
     :markdown
       ## Send SMS - 3
 
@@ -39,7 +39,7 @@
 
       #### Initialize RingCentral SDK
 
-  .step(data-title='Send SMS - 4', data-file='../send-sms.php', data-highlight='14-18')
+  .step(data-title='Send SMS - 4', data-file='../send-sms.php', data-highlight='14-14')
     :markdown
       ## Send SMS - 4
 
@@ -47,7 +47,7 @@
 
       #### Login via password
 
-  .step(data-title='Send SMS - 5', data-file='../send-sms.php', data-highlight='19-25')
+  .step(data-title='Send SMS - 5', data-file='../send-sms.php', data-highlight='16-22')
     :markdown
       ## Send SMS - 5
 
@@ -55,7 +55,7 @@
 
       #### Send SMS
 
-  .step(data-title='Send SMS - 6', data-file='../send-sms.php', data-highlight='26-26')
+  .step(data-title='Send SMS - 6', data-file='../send-sms.php', data-highlight='24-24')
     :markdown
       ## Send SMS - 6
 
@@ -72,31 +72,31 @@
 
       #### Create file `send-mms.php` for MMS sending
 
-  .step(data-title='Send MMS - 2', data-file='../send-mms.php', data-highlight='20-20')
+  .step(data-title='Send MMS - 2', data-file='../send-mms.php', data-highlight='16-16')
     :markdown
       ## Send MMS - 2
 
       ---
 
-      #### Create a new FormData object
+      #### Create a multipart builder
 
-  .step(data-title='Send MMS - 3', data-file='../send-mms.php', data-highlight='21-28')
+  .step(data-title='Send MMS - 3', data-file='../send-mms.php', data-highlight='17-23')
     :markdown
       ## Send MMS - 3
 
       ---
 
-      #### Add request body to formData
+      #### Add request body to multipart builder
 
-  .step(data-title='Send MMS - 4', data-file='../send-mms.php', data-highlight='29-29')
+  .step(data-title='Send MMS - 4', data-file='../send-mms.php', data-highlight='24-24')
     :markdown
       ## Send MMS - 4
 
       ---
 
-      #### Add an image to formData
+      #### Add an image to multipart builder
 
-  .step(data-title='Send MMS - 5', data-file='../send-mms.php', data-highlight='30-30')
+  .step(data-title='Send MMS - 5', data-file='../send-mms.php', data-highlight='25-27')
     :markdown
       ## Send MMS - 5
 
@@ -106,7 +106,7 @@
 
       #### You can see that MMS and SMS share the same API endpoint: `/account/~/extension/~/sms`
 
-  .step(data-title='Send MMS - 6', data-file='../send-mms.php', data-highlight='31-31')
+  .step(data-title='Send MMS - 6', data-file='../send-mms.php', data-highlight='29-29')
     :markdown
       ## Send MMS - 6
 
@@ -123,7 +123,7 @@
 
       #### Create file `track-status.php` for message status tracking.
 
-  .step(data-title='How to track delivery status of messages - 2', data-file='../track-status.php', data-highlight='27-29')
+  .step(data-title='How to track delivery status of messages - 2', data-file='../track-status.php', data-highlight='24-26')
     :markdown
       ## How to track delivery status of messages - 2
 
@@ -140,7 +140,7 @@
 
       #### Create file `retrieve-modify.php` for retrieving and modifying message history.
 
-  .step(data-title='How to retrieve and modify message history - 2', data-file='../retrieve-modify.php', data-highlight='19-22')
+  .step(data-title='How to retrieve and modify message history - 2', data-file='../retrieve-modify.php', data-highlight='16-21')
     :markdown
       ## How to retrieve and modify message history - 2
 
@@ -148,7 +148,7 @@
 
       #### Get the list of messages.
 
-  .step(data-title='How to retrieve and modify message history - 3', data-file='../retrieve-modify.php', data-highlight='20-20')
+  .step(data-title='How to retrieve and modify message history - 3', data-file='../retrieve-modify.php', data-highlight='17-17')
     :markdown
       ## How to retrieve and modify message history - 3
 
@@ -156,7 +156,7 @@
 
       #### Here we set the parameter `dateFrom`, if we omit it, its value will by default be set to 24 hours ago.
 
-  .step(data-title='How to retrieve and modify message history - 4', data-file='../retrieve-modify.php', data-highlight='25-27')
+  .step(data-title='How to retrieve and modify message history - 4', data-file='../retrieve-modify.php', data-highlight='23-28')
     :markdown
       ## How to retrieve and modify message history - 4
 
@@ -165,7 +165,7 @@
       #### Update the read status of a message to "Read".
 
 
-  .step(data-title='How to retrieve and modify message history - 5', data-file='../retrieve-modify.php', data-highlight='31-33')
+  .step(data-title='How to retrieve and modify message history - 5', data-file='../retrieve-modify.php', data-highlight='30-31')
     :markdown
       ## How to retrieve and modify message history - 5
 
@@ -190,7 +190,7 @@
 
       #### Create a subscription
 
-  .step(data-title='How to receive and reply to SMS messages - 3', data-file='../receive-reply.php', data-highlight='34-34')
+  .step(data-title='How to receive and reply to SMS messages - 3', data-file='../receive-reply.php', data-highlight='20-20')
     :markdown
       ## How to receive and reply to SMS messages - 3
 
@@ -200,7 +200,7 @@
 
       For a full list of available event filters, please refer to https://developer.ringcentral.com/api-docs/latest/index.html#!#EventTypes.html
 
-  .step(data-title='How to receive and reply to SMS messages - 4', data-file='../receive-reply.php', data-highlight='20-33')
+  .step(data-title='How to receive and reply to SMS messages - 4', data-file='../receive-reply.php', data-highlight='21-31')
     :markdown
       ## How to receive and reply to SMS messages - 4
 
@@ -210,7 +210,7 @@
 
       Here we just reply a message to the sender.
 
-  .step(data-title='How to receive and reply to SMS messages - 5', data-file='../receive-reply.php', data-highlight='35-37')
+  .step(data-title='How to receive and reply to SMS messages - 5', data-file='../receive-reply.php', data-highlight='32-33')
     :markdown
       ## How to receive and reply to SMS messages - 5
 
