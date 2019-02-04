@@ -7,11 +7,14 @@ require('vendor/autoload.php');
 $dotenv = new Dotenv();
 $dotenv->load(__DIR__.'/.env');
 
-$rcsdk = new RingCentral\SDK\SDK(getenv('RINGCENTRAL_CLIENT_ID'), getenv('RINGCENTRAL_CLIENT_SECRET'), getenv('RINGCENTRAL_SERVER_URL'));
+$rcsdk = new RingCentral\SDK\SDK(getenv('RINGCENTRAL_CLIENT_ID'),
+                                 getenv('RINGCENTRAL_CLIENT_SECRET'),
+      	                         getenv('RINGCENTRAL_SERVER_URL'));
 
 $platform = $rcsdk->platform();
-
-$platform->login(getenv('RINGCENTRAL_USERNAME'), getenv('RINGCENTRAL_EXTENSION'), getenv('RINGCENTRAL_PASSWORD'));
+$platform->login( getenv('RINGCENTRAL_USERNAME'),
+                  getenv('RINGCENTRAL_EXTENSION'),
+                  getenv('RINGCENTRAL_PASSWORD'));
 
 $r = $platform->post('/account/~/extension/~/sms', array(
     'from' => array('phoneNumber' => getenv('RINGCENTRAL_USERNAME')),
@@ -21,4 +24,5 @@ $r = $platform->post('/account/~/extension/~/sms', array(
     'text' => 'Message content',
 ));
 
-print_r($r->json()->id);
+print("Message ID: " . $r->json()->id . "\n");
+?>

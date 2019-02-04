@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "upgrade": "yarn-upgrade-all",
+    "docs": "cd docs && npx saurus author",
     "build": "cd docs && ../node_modules/.bin/saurus author"
   },
   "devDependencies": {
