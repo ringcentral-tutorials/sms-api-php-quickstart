@@ -2206,10 +2206,10 @@ vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
-viewsaurus-ringcentral@^0.4.7:
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/viewsaurus-ringcentral/-/viewsaurus-ringcentral-0.4.7.tgz#dcd150a3485d8fd943102175f7ce38b5b430b26c"
-  integrity sha512-o9GiwCHmhLrm/AT28SNO7e0M8arNfPOjHwBCwFEgOSgoIO3ZhCv5gWrovtt7aZv/T0N7iPRW3HWo5LOcYpdvNg==
+viewsaurus-ringcentral@^0.4.8:
+  version "0.4.8"
+  resolved "https://registry.yarnpkg.com/viewsaurus-ringcentral/-/viewsaurus-ringcentral-0.4.8.tgz#486fecff14331d3d6e5b33bce2fd521725c9a687"
+  integrity sha512-JV1HlM8MtvK+M2IfP0bhF6noS72C/X+qSCEWNWrIEHOme7pNgH8iPB4KrQBoDTbaHhYsFWaGPPvr57G/LLej8Q==
   dependencies:
     async "^0.9.0"
     backbone "^1.1.2"

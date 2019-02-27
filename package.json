@@ -6,7 +6,7 @@
     "docs": "cd docs && npx saurus author"
   },
   "devDependencies": {
-    "viewsaurus-ringcentral": "^0.4.7",
+    "viewsaurus-ringcentral": "^0.4.8",
     "yarn-upgrade-all": "^0.5.0"
   }
 }
