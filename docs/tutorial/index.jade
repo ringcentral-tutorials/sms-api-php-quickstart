@@ -3,7 +3,7 @@ style.
     list-style-type: disc;
     list-style-position: inside;
   }
-  ol { 
+  ol {
     list-style-type: decimal;
     list-style-position: inside;
   }
@@ -54,7 +54,7 @@ style.
         li How to send a image in an SMS message, a.k.a. "MMS."
         li How to track the delivery state of a message.
         li How to modify the message history.
-        li How to reply to an SMS message. 
+        li How to reply to an SMS message.
 
     h3 Other Languages
 
@@ -88,14 +88,14 @@ style.
     :markdown
       ## Creating an Application
 
-      Now, let's setup RingCentral and your environment. 
+      Now, let's setup RingCentral and your environment.
 
       The first step is to login to the RingCentral Developer Portal, and create an app. You can do this easily by clicking the button/link below, and then clicking the "Create" button.
 
       *You can safely ignore the Redirect URI field.*
 
     a.btn(href="https://developer.ringcentral.com/new-app?name=Sample+SMS+App&desc=A+sample+app+created+by+the+SMS+App+Walk-through&public=false&type=ServerOther&carriers=7710,7310,3420&permissions=SMS,ReadMessages,EditMessages,SubscriptionWebhook&redirectUri=") Create SMS Application
-    
+
     :markdown
       After creating the app, you will be taken to the app's dashboard. Make note of the following, as we will be using this in setting up your environment:
 
@@ -107,7 +107,7 @@ style.
     :markdown
       ## Create Your .env File
 
-      The ability to create a single software package that can be easily deployed to any environment is a modern-day essential. Therefore, we will begin with this fundamental setup, by placing all of our environment specific variables in a config file (of sorts). 
+      The ability to create a single software package that can be easily deployed to any environment is a modern-day essential. Therefore, we will begin with this fundamental setup, by placing all of our environment specific variables in a config file (of sorts).
 
       Create a copy of the provided `.env.sample` file and name it `.env`. Edit this new file and enter in the various variables accordingly.
 
@@ -122,7 +122,7 @@ style.
 
       ### Multiple .env Files
 
-      Placing the variables in a `.env` file will make it much easier down the road when you need to deploy the same code base to production. In fact, you might have a different configuration for your QA and/or staging environments. Create as many `.env` files as you need. 
+      Placing the variables in a `.env` file will make it much easier down the road when you need to deploy the same code base to production. In fact, you might have a different configuration for your QA and/or staging environments. Create as many `.env` files as you need.
 
 .chapter(data-title='Sending an SMS')
   .step(data-title='Sending an SMS', data-file='../send-sms.php')
@@ -132,19 +132,19 @@ style.
       First, let's create a file called `send-sms.php` and place within it the code to the right. This script will work right out of the box. So let's try it out. Go to the console and run this command:
 
       ```
-      $ python send-sms.php
+      $ php send-sms.php
       ```
 
-      You should see the message Id output to the screen, and shortly an SMS will arrive on the recipient's phone. 
+      You should see the message Id output to the screen, and shortly an SMS will arrive on the recipient's phone.
 
-      Now, let's walk-through the code to see what just happened. 
+      Now, let's walk-through the code to see what just happened.
 
   .step(data-title='Sending an SMS: Initialization', data-file='../send-sms.php', data-highlight='3-13')
     :markdown
       ## Initializing the Client
-      
+
       The first thing we do is load the environment variables within the `.env` file you created in the previous step. Then using those variables, we instantiate a new javascript client.
-      
+
   .step(data-title='Sending an SMS: Auth', data-file='../send-sms.php', data-highlight='14-17')
     :markdown
       ## Authentication
@@ -157,25 +157,25 @@ style.
 
       * **Are you authenticating using a personal phone number?**
 
-        Bear in mind that the `RINGCENTRAL_USERNAME` environment variable should point to a RingCentral phone number, not your personal phone number. 
+        Bear in mind that the `RINGCENTRAL_USERNAME` environment variable should point to a RingCentral phone number, not your personal phone number.
 
       * **Are you authenticating using your company phone number?**
 
-        If you authenticating using your company's main phone number, then you must also specify your user's phone extension in order to properly identify your account specifically. You do not need to specify an extension if you are authenticating using your direct line. 
+        If you authenticating using your company's main phone number, then you must also specify your user's phone extension in order to properly identify your account specifically. You do not need to specify an extension if you are authenticating using your direct line.
 
   .step(data-title='Sending an SMS: Doing the Deed', data-file='../send-sms.php', data-highlight='19-25')
     :markdown
       ## Send an SMS
-      
+
       After authentication, the `platform` object has now been seeded with an authorization token allowing you to access all the APIs your application has permission to use. So now, it's time to send an SMS. The API allows you to identify:
 
       * the sender
       * one or more receipients
       * the message to send
-      
+
       ### SMS Sending Numbers
 
-      The phone number used to identify the sender of the message must have permission or the authority to send an SMS. To determine which phone numbers a user can use to send and receive SMS, retrieve the user's list of phone numbers from the extension/phone-number endpoint and then filter that list by numbers with the `SmsSender` feature. A user record might look like the below. Note the `features` element which identified if the corresponding phone number can send an SMS. 
+      The phone number used to identify the sender of the message must have permission or the authority to send an SMS. To determine which phone numbers a user can use to send and receive SMS, retrieve the user's list of phone numbers from the extension/phone-number endpoint and then filter that list by numbers with the `SmsSender` feature. A user record might look like the below. Note the `features` element which identified if the corresponding phone number can send an SMS.
 
       ```
       {
@@ -244,20 +244,20 @@ style.
 
       ### Up Next
 
-      Next we will learn how to send an image in an SMS message. 
+      Next we will learn how to send an image in an SMS message.
 
 .chapter(data-title='Sending an Image')
   .step(data-title='Sending an Image', data-file='../send-mms.php')
     :markdown
       ## Download an Image
 
-      First, let's find an image to send. Kittens FTW. Right click on the image below and save it to your project directory. 
+      First, let's find an image to send. Kittens FTW. Right click on the image below and save it to your project directory.
 
       ![Kittens](./test.jpg)
 
       ## Sending an Image
 
-      Just as we did before, let's create a new file called `semd-mms.php` using the contents to the right. This script will work right out of the box. So let's first run it, and then walk-through the code in more detail to understand how it worked. 
+      Just as we did before, let's create a new file called `semd-mms.php` using the contents to the right. This script will work right out of the box. So let's first run it, and then walk-through the code in more detail to understand how it worked.
 
       ```
       $ php send-mms.php
@@ -265,7 +265,7 @@ style.
 
       You should see the message Id output to the screen, and shortly an SMS will arrive on the recipient's phone.
 
-      Next we will walk through this file to highlight the key differences from sending a purely text message. 
+      Next we will walk through this file to highlight the key differences from sending a purely text message.
 
   .step(data-title='Sending an Image: Attachments', data-file='../send-mms.php', data-highlight='19-29')
     :markdown
@@ -294,7 +294,7 @@ style.
     :markdown
       ## How to track delivery status of message
 
-      Once a message has been sent, you can check to see if it was successfully delivered. In this example, you should observe how the basic structure of the script mirrors that of the previous examples. We initialize the client, authenticate, and so forth. Let's begin as before: create a new file called `track-status.php` using the contents to the right. Then, let's run the script, and then follow up by explaining what is going on. 
+      Once a message has been sent, you can check to see if it was successfully delivered. In this example, you should observe how the basic structure of the script mirrors that of the previous examples. We initialize the client, authenticate, and so forth. Let's begin as before: create a new file called `track-status.php` using the contents to the right. Then, let's run the script, and then follow up by explaining what is going on.
 
       ```
       $ php track-status.php
@@ -306,7 +306,7 @@ style.
     :markdown
       ## Checking the Status
 
-      This script is closely related to our first, 'send-sms.php`, except this script performs an additional step after the message is sent. 
+      This script is closely related to our first, 'send-sms.php`, except this script performs an additional step after the message is sent.
 
       ### Display its Status
 
@@ -343,7 +343,7 @@ style.
       }
       ```
 
-      If the message was sent properly, then the text "Delivered" will be printed to the console. 
+      If the message was sent properly, then the text "Delivered" will be printed to the console.
 
       ### Up Next
 
@@ -368,11 +368,11 @@ style.
 
       ### Retrieve the List
 
-      In this example, we retrieve a list of messages and pick the first one in the list to modify. In your application, you almost certainly will rely on different logic, but the basic pattern is the same. Here we retrieve a list of messages sent after a specific date. Then we just arbitrarily choose the first message returned to us. 
+      In this example, we retrieve a list of messages and pick the first one in the list to modify. In your application, you almost certainly will rely on different logic, but the basic pattern is the same. Here we retrieve a list of messages sent after a specific date. Then we just arbitrarily choose the first message returned to us.
 
       ### Update Message Status
 
-      Next, we update the record using HTTP `PUT`. We transmit only the properties we want to change. In this case, we set `readStatus` to "Read" and then visually confirm that the status was changed by outputting the status returned to us in the response. 
+      Next, we update the record using HTTP `PUT`. We transmit only the properties we want to change. In this case, we set `readStatus` to "Read" and then visually confirm that the status was changed by outputting the status returned to us in the response.
 
   .step(data-title='Delete a Message', data-file='../retrieve-modify.php', data-highlight='33-34')
     :markdown
@@ -382,7 +382,7 @@ style.
 
       ### Next Up
 
-      Next, we will learn how to respond to an SMS message that we receive. 
+      Next, we will learn how to respond to an SMS message that we receive.
 
 .chapter(data-title='Replying to SMS messages')
   .step(data-title='Replying to SMS messages', data-file='../receive-reply.php', data-highlight='21-32')
@@ -401,7 +401,7 @@ style.
 
       ### Create a Handler
 
-      First, we create a function to send the auto-response. This function will receive as input the message that we will be responding to. We use this message to set the receipint of our response. 
+      First, we create a function to send the auto-response. This function will receive as input the message that we will be responding to. We use this message to set the receipint of our response.
 
   .step(data-title='Replying to SMS messages', data-file='../receive-reply.php', data-highlight='34-38')
     :markdown
@@ -410,7 +410,7 @@ style.
       Once the handler has been created, we need to bind it to the receipt of an SMS message. We do that by:
 
       * Create a subscription object
-      * Listen for the `subscription.events.notification` event, and bind it to our handler. 
+      * Listen for the `subscription.events.notification` event, and bind it to our handler.
       * Set the event filter to the receipt of SMS message specifically.
       * Register the subscription.
 
