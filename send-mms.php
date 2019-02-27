@@ -24,7 +24,7 @@ $body = array(
 
 $request = $rcsdk->createMultipartBuilder()
     ->setBody( $body )
-    ->add(fopen(__DIR__.'/test.jpg', 'r'))
+    ->add(fopen(__DIR__.'/docs/test.jpg', 'r'))
     ->request('/account/~/extension/~/sms');
 $r = $platform->sendRequest($request);
 
