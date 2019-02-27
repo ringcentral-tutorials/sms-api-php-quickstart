@@ -1,8 +1,16 @@
 {
   "name": "sms-api-php-quickstart",
   "description": "A quickstart tutorial to teach users to use RingCentral SMS API.",
+  "repositories": [
+    {
+      "url": "https://github.com/ringcentral/ringcentral-php.git",
+      "type": "git"
+    }
+  ],
   "require": {
     "symfony/dotenv": "^4.0",
-    "ringcentral/ringcentral-php": "^2.1"
-  }
+    "ringcentral/ringcentral-php": "master"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
