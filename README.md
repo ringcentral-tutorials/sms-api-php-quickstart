@@ -15,3 +15,31 @@ A quickstart tutorial to teach users to use RingCentral SMS API. The following t
 - How to track delivery status of messages
 - How to retrieve and modify message history
 - How to receive and reply to SMS messages
+
+
+## Setup
+
+```
+composer install
+yarn install
+cp .env.sample .env
+```
+
+Edit `.env`
+
+
+## Run demo code
+
+```
+php send-sms.php
+php send-mms.php
+php track-status.php
+php retrieve-modify.php
+php receive-reply.php
+```
+
+## Generate docs
+
+```
+yarn docs
+```
